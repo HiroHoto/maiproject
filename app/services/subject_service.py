@@ -12,11 +12,9 @@ class SubjectService:
         subjects_data = data.get(str(user_id), {}).get("subjects", {})
         if isinstance(subjects_data, dict):
             return [{"id": key, **value} for key, value in subjects_data.items()]
-        # If it's already a list (e.g., due to older data structures), return as is.
         return subjects_data
 
     async def add_subject(self, user_id: str, subject_name: str) -> str:
-        """Adds a new subject for a user and returns its key."""
         data = await self.db_manager.load_data()
         user_id_str = str(user_id)
 
@@ -24,7 +22,6 @@ class SubjectService:
             data[user_id_str] = {"subjects": {}, "homework": [], "settings": {}}
 
         subjects = data[user_id_str].get("subjects", {})
-        # Ensure subjects is a dictionary to prevent TypeError from old data formats
         if not isinstance(subjects, dict):
             subjects = {}
             
@@ -45,11 +42,9 @@ class SubjectService:
 
         user_data = data[user_id_str]
 
-        # Delete the subject
         if subject_key in user_data.get("subjects", {}):
             del user_data["subjects"][subject_key]
 
-        # Delete associated homework
         homework = user_data.get("homework", [])
         user_data["homework"] = [hw for hw in homework if hw.get("subject_key") != subject_key]
 

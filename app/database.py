@@ -22,4 +22,3 @@ class DatabaseManager:
             with open(self.db_path, 'w', encoding='utf-8') as f:
                 json.dump(data, f, indent=4, ensure_ascii=False)
 
-# The instance will be created in the Bot class

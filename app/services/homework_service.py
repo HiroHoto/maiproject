@@ -2,7 +2,7 @@ import uuid
 from typing import Dict, Any, List
 from datetime import datetime, timedelta
 from app.database import DatabaseManager
-from app.utils import get_week_dates # Assuming utils.py is moved and adapted
+from app.utils import get_week_dates 
 
 class HomeworkService:
     def __init__(self, db_manager: DatabaseManager):
