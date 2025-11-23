@@ -1,0 +1,15 @@
+{
+    "6368539092": {
+        "subjects": {
+            "5ff18e5e-ce06-47bd-904f-ae0f4f519000": {
+                "name": "Дискра"
+            }
+        },
+        "homework": [],
+        "settings": {
+            "reminders_enabled": false,
+            "default_notification_time": "09:00",
+            "ask_for_notification_time": true
+        }
+    }
+}
