@@ -80,7 +80,6 @@ class KeyboardFactory:
         default_time = user_settings.get('default_notification_time', '09:00')
         keyboard = [
             [InlineKeyboardButton(f"Напоминания о ДЗ: {reminders_status}", callback_data="toggle_setting:reminders_enabled")],
-            [InlineKeyboardButton(f"Время напоминаний: {default_time}", callback_data="edit_reminder_time")],
             [InlineKeyboardButton(f"Спрашивать время для ДЗ: {ask_time_status}", callback_data="toggle_setting:ask_for_notification_time")],
             [InlineKeyboardButton("Мои предметы", callback_data="manage_subjects")],
             [InlineKeyboardButton("◀️ Назад", callback_data="back_to_main_menu")]
